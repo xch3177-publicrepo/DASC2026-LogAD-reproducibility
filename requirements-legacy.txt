@@ -1,0 +1,9 @@
+# Dependency names from recovered imports; not an original environment lock.
+# Full legacy model training was not executed for this support release.
+numpy
+pandas
+scipy
+scikit-learn
+xgboost
+gensim
+torch

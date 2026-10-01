@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+local_data/
+new_runs/
+legacy_baseline/proc/
+legacy_baseline/out/
+*.log
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.zip
+.DS_Store

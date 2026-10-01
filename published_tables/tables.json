@@ -1,0 +1,1713 @@
+{
+  "schema": 1,
+  "scope": "published aggregate reconstruction, not experiment replay",
+  "tables": [
+    {
+      "number": 1,
+      "label": "tab:datasets",
+      "caption": "Dataset characteristics. HDFS and BGL differ in scale, vocabulary, prevalence, repetition, and session structure.",
+      "rows": [
+        {
+          "cells": [
+            {
+              "text": "Characteristic",
+              "span": 1
+            },
+            {
+              "text": "HDFS",
+              "span": 1
+            },
+            {
+              "text": "BGL",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Unit",
+              "span": 1
+            },
+            {
+              "text": "block session",
+              "span": 1
+            },
+            {
+              "text": "100-line window",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Sessions/windows",
+              "span": 1
+            },
+            {
+              "text": "575,061",
+              "span": 1
+            },
+            {
+              "text": "47,479",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Anomalies",
+              "span": 1
+            },
+            {
+              "text": "16,838 (2.93%)",
+              "span": 1
+            },
+            {
+              "text": "4,802 (10.11%)",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Event vocabulary",
+              "span": 1
+            },
+            {
+              "text": "29",
+              "span": 1
+            },
+            {
+              "text": "2,746",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Mean length",
+              "span": 1
+            },
+            {
+              "text": "19.4",
+              "span": 1
+            },
+            {
+              "text": "100",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Distinct count vectors",
+              "span": 1
+            },
+            {
+              "text": "589",
+              "span": 1
+            },
+            {
+              "text": "6,280",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Repeated-vector share",
+              "span": 1
+            },
+            {
+              "text": "99.96%",
+              "span": 1
+            },
+            {
+              "text": "88.86%",
+              "span": 1
+            }
+          ]
+        }
+      ],
+      "source_table_sha256": "fcd5bd953134885f87d538843ca46875b46bb0e0cfeae7e2e751ca919301f988"
+    },
+    {
+      "number": 2,
+      "label": "tab:access",
+      "caption": "Information available before final test scoring, and the resulting access regime.",
+      "rows": [
+        {
+          "cells": [
+            {
+              "text": "Condition",
+              "span": 1
+            },
+            {
+              "text": "Labels visible",
+              "span": 1
+            },
+            {
+              "text": "Template catalog",
+              "span": 1
+            },
+            {
+              "text": "Access regime",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Within random/group",
+              "span": 1
+            },
+            {
+              "text": "own training",
+              "span": 1
+            },
+            {
+              "text": "full catalog",
+              "span": 1
+            },
+            {
+              "text": "transductive*",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "BGL chronological",
+              "span": 1
+            },
+            {
+              "text": "past training",
+              "span": 1
+            },
+            {
+              "text": "cutoff snapshot",
+              "span": 1
+            },
+            {
+              "text": "inductive",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Cross: source corpus, source IDF",
+              "span": 1
+            },
+            {
+              "text": "source training",
+              "span": 1
+            },
+            {
+              "text": "source only",
+              "span": 1
+            },
+            {
+              "text": "inductive",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Cross: union corpus or target IDF",
+              "span": 1
+            },
+            {
+              "text": "source training",
+              "span": 1
+            },
+            {
+              "text": "source + target",
+              "span": 1
+            },
+            {
+              "text": "transductive",
+              "span": 1
+            }
+          ]
+        }
+      ],
+      "source_table_sha256": "c8417e1b7ed69a2288820ef7641a51703cff602e451debb3904ba7261c368d0f",
+      "notes": [
+        "* Scored labels are hidden; transductive access uses unlabeled scored-data artifacts (Section IV)."
+      ]
+    },
+    {
+      "number": 3,
+      "label": "tab:hyper",
+      "caption": "Fixed hyperparameters used across protocols and seeds.",
+      "rows": [
+        {
+          "cells": [
+            {
+              "text": "Model",
+              "span": 1
+            },
+            {
+              "text": "Configuration",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "LR",
+              "span": 1
+            },
+            {
+              "text": "inverse regularization; balanced weights; 1,000 iterations; standardized input",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "RF",
+              "span": 1
+            },
+            {
+              "text": "200 trees; balanced-subsample class weights",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "XGBoost",
+              "span": 1
+            },
+            {
+              "text": "300 trees; depth 6; rate 0.1; histogram method; class-ratio positive weight",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Word2vec",
+              "span": 1
+            },
+            {
+              "text": "skip-gram; 100 dimensions; window 5; minimum count 1; 30 epochs",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "LSTM",
+              "span": 1
+            },
+            {
+              "text": "32-d embedding; 64 hidden; Adam 10^-3; batch 256; at most five epochs",
+              "span": 1
+            }
+          ]
+        }
+      ],
+      "source_table_sha256": "bfd4b5495b0f67de310ef1e4ff556488e9529d4400524bcbb780b1fa3b8b8130"
+    },
+    {
+      "number": 4,
+      "label": "tab:hdfs",
+      "caption": "HDFS results across five seeds (mean ± SD); random/group access is transductive.",
+      "rows": [
+        {
+          "cells": [
+            {
+              "text": "",
+              "span": 1
+            },
+            {
+              "text": "Random split",
+              "span": 2
+            },
+            {
+              "text": "Group-disjoint",
+              "span": 2
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Configuration",
+              "span": 1
+            },
+            {
+              "text": "AP",
+              "span": 1
+            },
+            {
+              "text": "F_1",
+              "span": 1
+            },
+            {
+              "text": "AP",
+              "span": 1
+            },
+            {
+              "text": "F_1",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Count/LR",
+              "span": 1
+            },
+            {
+              "text": ".991±.004",
+              "span": 1
+            },
+            {
+              "text": ".989±.006",
+              "span": 1
+            },
+            {
+              "text": ".867±.103",
+              "span": 1
+            },
+            {
+              "text": ".934±.046",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Count/RF",
+              "span": 1
+            },
+            {
+              "text": "1.000±.000",
+              "span": 1
+            },
+            {
+              "text": ".998±.000",
+              "span": 1
+            },
+            {
+              "text": ".743±.227",
+              "span": 1
+            },
+            {
+              "text": ".808±.259",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Count/XGB",
+              "span": 1
+            },
+            {
+              "text": ".999±.001",
+              "span": 1
+            },
+            {
+              "text": ".998±.000",
+              "span": 1
+            },
+            {
+              "text": ".692±.175",
+              "span": 1
+            },
+            {
+              "text": ".582±.337",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Sequence/LSTM",
+              "span": 1
+            },
+            {
+              "text": ".999±.001",
+              "span": 1
+            },
+            {
+              "text": ".993±.002",
+              "span": 1
+            },
+            {
+              "text": ".627±.210",
+              "span": 1
+            },
+            {
+              "text": ".502±.324",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Semantic/LR",
+              "span": 1
+            },
+            {
+              "text": ".982±.003",
+              "span": 1
+            },
+            {
+              "text": ".981±.003",
+              "span": 1
+            },
+            {
+              "text": ".725±.174",
+              "span": 1
+            },
+            {
+              "text": ".792±.275",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Semantic/XGB",
+              "span": 1
+            },
+            {
+              "text": "1.000±.000",
+              "span": 1
+            },
+            {
+              "text": ".998±.000",
+              "span": 1
+            },
+            {
+              "text": ".624±.235",
+              "span": 1
+            },
+            {
+              "text": ".318±.241",
+              "span": 1
+            }
+          ]
+        }
+      ],
+      "source_table_sha256": "6e9fb3a66508d3a5905dd9b8783133de377d2493fb12dacfa7534ac421b6eb26"
+    },
+    {
+      "number": 5,
+      "label": "tab:bgl",
+      "caption": "BGL results across five seeds (mean ± SD); random access is transductive, chronological access is inductive.",
+      "rows": [
+        {
+          "cells": [
+            {
+              "text": "",
+              "span": 1
+            },
+            {
+              "text": "Random split",
+              "span": 2
+            },
+            {
+              "text": "Chronological",
+              "span": 2
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Configuration",
+              "span": 1
+            },
+            {
+              "text": "AP",
+              "span": 1
+            },
+            {
+              "text": "F_1",
+              "span": 1
+            },
+            {
+              "text": "AP",
+              "span": 1
+            },
+            {
+              "text": "F_1",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Count/LR",
+              "span": 1
+            },
+            {
+              "text": ".987±.003",
+              "span": 1
+            },
+            {
+              "text": ".976±.004",
+              "span": 1
+            },
+            {
+              "text": ".277±.000",
+              "span": 1
+            },
+            {
+              "text": ".423±.000",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Count/RF",
+              "span": 1
+            },
+            {
+              "text": ".998±.001",
+              "span": 1
+            },
+            {
+              "text": ".984±.002",
+              "span": 1
+            },
+            {
+              "text": ".388±.005",
+              "span": 1
+            },
+            {
+              "text": ".400±.012",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Count/XGB",
+              "span": 1
+            },
+            {
+              "text": ".998±.001",
+              "span": 1
+            },
+            {
+              "text": ".989±.004",
+              "span": 1
+            },
+            {
+              "text": ".448±.000",
+              "span": 1
+            },
+            {
+              "text": ".396±.000",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Sequence/LSTM",
+              "span": 1
+            },
+            {
+              "text": ".946±.012",
+              "span": 1
+            },
+            {
+              "text": ".916±.017",
+              "span": 1
+            },
+            {
+              "text": ".236±.151",
+              "span": 1
+            },
+            {
+              "text": ".282±.091",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Semantic/LR",
+              "span": 1
+            },
+            {
+              "text": ".916±.006",
+              "span": 1
+            },
+            {
+              "text": ".870±.007",
+              "span": 1
+            },
+            {
+              "text": ".205±.095",
+              "span": 1
+            },
+            {
+              "text": ".267±.043",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Semantic/XGB",
+              "span": 1
+            },
+            {
+              "text": ".992±.000",
+              "span": 1
+            },
+            {
+              "text": ".955±.006",
+              "span": 1
+            },
+            {
+              "text": ".676±.086",
+              "span": 1
+            },
+            {
+              "text": ".492±.165",
+              "span": 1
+            }
+          ]
+        }
+      ],
+      "source_table_sha256": "224dad81a02a40e41e125da9700d50b2ef794ee46b80338497f816d8e8d321ae"
+    },
+    {
+      "number": 6,
+      "label": "tab:bglsens",
+      "caption": "BGL chronological sensitivity over five seeds. Parser runs use the 70/30 split; rolling tests cover the next 10% after each cutoff.",
+      "rows": [
+        {
+          "cells": [
+            {
+              "text": "",
+              "span": 1
+            },
+            {
+              "text": "Test anomaly",
+              "span": 2
+            },
+            {
+              "text": "Count/XGB",
+              "span": 1
+            },
+            {
+              "text": "LSTM",
+              "span": 1
+            },
+            {
+              "text": "Semantic/XGB",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Panel",
+              "span": 1
+            },
+            {
+              "text": "Setting",
+              "span": 1
+            },
+            {
+              "text": "rate",
+              "span": 1
+            },
+            {
+              "text": "AP",
+              "span": 1
+            },
+            {
+              "text": "AP",
+              "span": 1
+            },
+            {
+              "text": "AP",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Parser",
+              "span": 1
+            },
+            {
+              "text": "Compact s = .3",
+              "span": 1
+            },
+            {
+              "text": "10.1%",
+              "span": 1
+            },
+            {
+              "text": ".460±.000",
+              "span": 1
+            },
+            {
+              "text": "--",
+              "span": 1
+            },
+            {
+              "text": ".741±.054",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Parser",
+              "span": 1
+            },
+            {
+              "text": "Compact s = .4",
+              "span": 1
+            },
+            {
+              "text": "10.1%",
+              "span": 1
+            },
+            {
+              "text": ".448±.000",
+              "span": 1
+            },
+            {
+              "text": "--",
+              "span": 1
+            },
+            {
+              "text": ".676±.086",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Parser",
+              "span": 1
+            },
+            {
+              "text": "Compact s = .5",
+              "span": 1
+            },
+            {
+              "text": "10.1%",
+              "span": 1
+            },
+            {
+              "text": ".448±.000",
+              "span": 1
+            },
+            {
+              "text": "--",
+              "span": 1
+            },
+            {
+              "text": ".631±.109",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Parser",
+              "span": 1
+            },
+            {
+              "text": "Drain3 s = .4",
+              "span": 1
+            },
+            {
+              "text": "10.1%",
+              "span": 1
+            },
+            {
+              "text": ".432±.000",
+              "span": 1
+            },
+            {
+              "text": "--",
+              "span": 1
+            },
+            {
+              "text": ".617±.177",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Rolling",
+              "span": 1
+            },
+            {
+              "text": "50→60%",
+              "span": 1
+            },
+            {
+              "text": "1.3%",
+              "span": 1
+            },
+            {
+              "text": ".902±.000",
+              "span": 1
+            },
+            {
+              "text": ".475±.147",
+              "span": 1
+            },
+            {
+              "text": ".838±.047",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Rolling",
+              "span": 1
+            },
+            {
+              "text": "60→70%",
+              "span": 1
+            },
+            {
+              "text": "10.8%",
+              "span": 1
+            },
+            {
+              "text": ".376±.000",
+              "span": 1
+            },
+            {
+              "text": ".201±.048",
+              "span": 1
+            },
+            {
+              "text": ".663±.077",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Rolling",
+              "span": 1
+            },
+            {
+              "text": "70→80%",
+              "span": 1
+            },
+            {
+              "text": "13.2%",
+              "span": 1
+            },
+            {
+              "text": ".588±.000",
+              "span": 1
+            },
+            {
+              "text": ".373±.248",
+              "span": 1
+            },
+            {
+              "text": ".760±.103",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Rolling",
+              "span": 1
+            },
+            {
+              "text": "80→90%",
+              "span": 1
+            },
+            {
+              "text": "5.9%",
+              "span": 1
+            },
+            {
+              "text": ".332±.000",
+              "span": 1
+            },
+            {
+              "text": ".273±.130",
+              "span": 1
+            },
+            {
+              "text": ".776±.079",
+              "span": 1
+            }
+          ]
+        }
+      ],
+      "source_table_sha256": "016bb557ad18a7db1ce990ee3f8d7f157a037598b3820d68cb92ca783e96cd61"
+    },
+    {
+      "number": 7,
+      "label": "tab:cost",
+      "caption": "Component-level cost over five seeds. Throughput covers classifier-only inference; size covers the serialized classifier.",
+      "rows": [
+        {
+          "cells": [
+            {
+              "text": "System",
+              "span": 1
+            },
+            {
+              "text": "Configuration",
+              "span": 1
+            },
+            {
+              "text": "Fit (s)",
+              "span": 1
+            },
+            {
+              "text": "Infer. (k/s)",
+              "span": 1
+            },
+            {
+              "text": "Size (MB)",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "HDFS",
+              "span": 1
+            },
+            {
+              "text": "Count/LR",
+              "span": 1
+            },
+            {
+              "text": "2.6±1.1",
+              "span": 1
+            },
+            {
+              "text": "6771±2151",
+              "span": 1
+            },
+            {
+              "text": ".002",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "HDFS",
+              "span": 1
+            },
+            {
+              "text": "Count/RF",
+              "span": 1
+            },
+            {
+              "text": "17.8±2.1",
+              "span": 1
+            },
+            {
+              "text": "312±91",
+              "span": 1
+            },
+            {
+              "text": "2.234",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "HDFS",
+              "span": 1
+            },
+            {
+              "text": "Count/XGB",
+              "span": 1
+            },
+            {
+              "text": "3.8±1.8",
+              "span": 1
+            },
+            {
+              "text": "660±94",
+              "span": 1
+            },
+            {
+              "text": ".423",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "HDFS",
+              "span": 1
+            },
+            {
+              "text": "Sequence/LSTM",
+              "span": 1
+            },
+            {
+              "text": "309.3±13.2",
+              "span": 1
+            },
+            {
+              "text": "37±4",
+              "span": 1
+            },
+            {
+              "text": ".116",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "HDFS",
+              "span": 1
+            },
+            {
+              "text": "Semantic/LR",
+              "span": 1
+            },
+            {
+              "text": "31.4±21.3",
+              "span": 1
+            },
+            {
+              "text": "1257±113",
+              "span": 1
+            },
+            {
+              "text": ".004",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "HDFS",
+              "span": 1
+            },
+            {
+              "text": "Semantic/XGB",
+              "span": 1
+            },
+            {
+              "text": "9.4±.8",
+              "span": 1
+            },
+            {
+              "text": "696±189",
+              "span": 1
+            },
+            {
+              "text": ".416",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "BGL",
+              "span": 1
+            },
+            {
+              "text": "Count/LR",
+              "span": 1
+            },
+            {
+              "text": "16.5±4.4",
+              "span": 1
+            },
+            {
+              "text": "70±31",
+              "span": 1
+            },
+            {
+              "text": ".069",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "BGL",
+              "span": 1
+            },
+            {
+              "text": "Count/RF",
+              "span": 1
+            },
+            {
+              "text": "38.9±18.6",
+              "span": 1
+            },
+            {
+              "text": "29±3",
+              "span": 1
+            },
+            {
+              "text": "10.869",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "BGL",
+              "span": 1
+            },
+            {
+              "text": "Count/XGB",
+              "span": 1
+            },
+            {
+              "text": "10.2±3.2",
+              "span": 1
+            },
+            {
+              "text": "222±74",
+              "span": 1
+            },
+            {
+              "text": ".372",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "BGL",
+              "span": 1
+            },
+            {
+              "text": "Sequence/LSTM",
+              "span": 1
+            },
+            {
+              "text": "37.8±3.9",
+              "span": 1
+            },
+            {
+              "text": "15±2",
+              "span": 1
+            },
+            {
+              "text": ".386",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "BGL",
+              "span": 1
+            },
+            {
+              "text": "Semantic/LR",
+              "span": 1
+            },
+            {
+              "text": "6.1±1.7",
+              "span": 1
+            },
+            {
+              "text": "1812±754",
+              "span": 1
+            },
+            {
+              "text": ".004",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "BGL",
+              "span": 1
+            },
+            {
+              "text": "Semantic/XGB",
+              "span": 1
+            },
+            {
+              "text": "1.6±.3",
+              "span": 1
+            },
+            {
+              "text": "505±28",
+              "span": 1
+            },
+            {
+              "text": ".684",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Shared Word2vec fit",
+              "span": 2
+            },
+            {
+              "text": ".4±.0",
+              "span": 1
+            },
+            {
+              "text": "--",
+              "span": 1
+            },
+            {
+              "text": "--",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Semantic transform: HDFS/BGL",
+              "span": 2
+            },
+            {
+              "text": "1.0/1.4",
+              "span": 1
+            },
+            {
+              "text": "--",
+              "span": 1
+            },
+            {
+              "text": "--",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Frozen BGL semantic fit",
+              "span": 2
+            },
+            {
+              "text": "3.0±.5",
+              "span": 1
+            },
+            {
+              "text": "--",
+              "span": 1
+            },
+            {
+              "text": "--",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "BGL parsing, one run",
+              "span": 2
+            },
+            {
+              "text": "54",
+              "span": 1
+            },
+            {
+              "text": "--",
+              "span": 1
+            },
+            {
+              "text": "--",
+              "span": 1
+            }
+          ]
+        }
+      ],
+      "source_table_sha256": "be6687b002543e47bfdc58d06784db25cd08624daa3ba8854fa910aef63859bc"
+    },
+    {
+      "number": 8,
+      "label": "tab:transfer",
+      "caption": "Cross-system XGBoost target-catalog visibility over five seeds. Union corpus and target IDF are offline transductive; budgets use tie-aware allocation.",
+      "rows": [
+        {
+          "cells": [
+            {
+              "text": "Word2vec",
+              "span": 1
+            },
+            {
+              "text": "IDF",
+              "span": 1
+            },
+            {
+              "text": "AP",
+              "span": 1
+            },
+            {
+              "text": "P@1%",
+              "span": 1
+            },
+            {
+              "text": "R@1%",
+              "span": 1
+            },
+            {
+              "text": "P@5%",
+              "span": 1
+            },
+            {
+              "text": "R@5%",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "HDFS→BGL",
+              "span": 7
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Source",
+              "span": 1
+            },
+            {
+              "text": "Source",
+              "span": 1
+            },
+            {
+              "text": ".191±.107",
+              "span": 1
+            },
+            {
+              "text": ".242±.160",
+              "span": 1
+            },
+            {
+              "text": ".024±.016",
+              "span": 1
+            },
+            {
+              "text": ".220±.174",
+              "span": 1
+            },
+            {
+              "text": ".109±.086",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Source",
+              "span": 1
+            },
+            {
+              "text": "Target",
+              "span": 1
+            },
+            {
+              "text": ".187±.084",
+              "span": 1
+            },
+            {
+              "text": ".259±.163",
+              "span": 1
+            },
+            {
+              "text": ".026±.016",
+              "span": 1
+            },
+            {
+              "text": ".253±.163",
+              "span": 1
+            },
+            {
+              "text": ".125±.081",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Union",
+              "span": 1
+            },
+            {
+              "text": "Source",
+              "span": 1
+            },
+            {
+              "text": ".297±.136",
+              "span": 1
+            },
+            {
+              "text": ".443±.266",
+              "span": 1
+            },
+            {
+              "text": ".044±.026",
+              "span": 1
+            },
+            {
+              "text": ".293±.021",
+              "span": 1
+            },
+            {
+              "text": ".145±.010",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Union",
+              "span": 1
+            },
+            {
+              "text": "Target",
+              "span": 1
+            },
+            {
+              "text": ".325±.159",
+              "span": 1
+            },
+            {
+              "text": ".446±.312",
+              "span": 1
+            },
+            {
+              "text": ".044±.031",
+              "span": 1
+            },
+            {
+              "text": ".318±.122",
+              "span": 1
+            },
+            {
+              "text": ".157±.060",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "BGL→HDFS",
+              "span": 7
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Source",
+              "span": 1
+            },
+            {
+              "text": "Source",
+              "span": 1
+            },
+            {
+              "text": ".089±.066",
+              "span": 1
+            },
+            {
+              "text": ".151±.228",
+              "span": 1
+            },
+            {
+              "text": ".051±.078",
+              "span": 1
+            },
+            {
+              "text": ".075±.057",
+              "span": 1
+            },
+            {
+              "text": ".128±.097",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Source",
+              "span": 1
+            },
+            {
+              "text": "Target",
+              "span": 1
+            },
+            {
+              "text": ".132±.100",
+              "span": 1
+            },
+            {
+              "text": ".248±.297",
+              "span": 1
+            },
+            {
+              "text": ".085±.102",
+              "span": 1
+            },
+            {
+              "text": ".095±.067",
+              "span": 1
+            },
+            {
+              "text": ".162±.114",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Union",
+              "span": 1
+            },
+            {
+              "text": "Source",
+              "span": 1
+            },
+            {
+              "text": ".039±.017",
+              "span": 1
+            },
+            {
+              "text": ".032±.018",
+              "span": 1
+            },
+            {
+              "text": ".011±.006",
+              "span": 1
+            },
+            {
+              "text": ".025±.007",
+              "span": 1
+            },
+            {
+              "text": ".043±.011",
+              "span": 1
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "text": "Union",
+              "span": 1
+            },
+            {
+              "text": "Target",
+              "span": 1
+            },
+            {
+              "text": ".142±.137",
+              "span": 1
+            },
+            {
+              "text": ".201±.233",
+              "span": 1
+            },
+            {
+              "text": ".068±.080",
+              "span": 1
+            },
+            {
+              "text": ".129±.121",
+              "span": 1
+            },
+            {
+              "text": ".221±.207",
+              "span": 1
+            }
+          ]
+        }
+      ],
+      "source_table_sha256": "6220d23f9b37572b9660d26a758e20b1908f0a9716a2b2f82783483a52662233"
+    }
+  ]
+}

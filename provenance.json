@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "artifact_kind": "reproduction support artifact; partial legacy rerun plus aggregate reconstruction",
+  "legacy_archive": {
+    "filename": "LogAD_project.zip",
+    "sha256": "6bba7d70db49dee95b658fa0a5082ee52b9d8a07e5a4f477206754a860256b15"
+  },
+  "archive_entries": [
+    {
+      "archive_member": "dasc_log/src/drain.py",
+      "public_path": "legacy_baseline/src/drain.py",
+      "original_sha256": "58ca694d5319340d0baeb9fdfdc6b72806690dbdd14778c632cd6eaeb106d924",
+      "path_only_patches": []
+    },
+    {
+      "archive_member": "dasc_log/src/build_hdfs.py",
+      "public_path": "legacy_baseline/src/build_hdfs.py",
+      "original_sha256": "8ea73fba8d66997596d07d9250bd192895315bfa4d0d0fbf4b260b3d3d969274",
+      "path_only_patches": [
+        {
+          "old": "RAW = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'raw', 'HDFS_v1', 'preprocessed')\nOUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'proc')\n",
+          "new": "ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\nRAW = os.path.join(os.environ.get('LOGAD_RAW_ROOT', os.path.join(ROOT, 'raw')), 'HDFS_v1', 'preprocessed')\nOUT = os.environ.get('LOGAD_PROC_DIR', os.path.join(ROOT, 'proc'))\n"
+        }
+      ]
+    },
+    {
+      "archive_member": "dasc_log/src/build_bgl.py",
+      "public_path": "legacy_baseline/src/build_bgl.py",
+      "original_sha256": "aa5425ad0ed8e43b28dd1f6324938488a579bf0f8c7fbd059e7123cf3f840b69",
+      "path_only_patches": [
+        {
+          "old": "RAW = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'raw', 'BGL', 'BGL.log')\nOUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'proc')\n",
+          "new": "ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\nRAW = os.path.join(os.environ.get('LOGAD_RAW_ROOT', os.path.join(ROOT, 'raw')), 'BGL', 'BGL.log')\nOUT = os.environ.get('LOGAD_PROC_DIR', os.path.join(ROOT, 'proc'))\n"
+        }
+      ]
+    },
+    {
+      "archive_member": "dasc_log/src/log_features.py",
+      "public_path": "legacy_baseline/src/log_features.py",
+      "original_sha256": "52c2e518bfec08b03ce9eda1921005b24200ba9ae325dd2cb5dc17781f6ad549",
+      "path_only_patches": []
+    },
+    {
+      "archive_member": "dasc_log/src/lstm_model.py",
+      "public_path": "legacy_baseline/src/lstm_model.py",
+      "original_sha256": "f29f96120a230e7317e8df2660bb84f2c1b33814950bbb5500773e1ee26facb4",
+      "path_only_patches": []
+    },
+    {
+      "archive_member": "dasc_log/src/log_experiments.py",
+      "public_path": "legacy_baseline/src/log_experiments.py",
+      "original_sha256": "63a6a40d69827213361924c7746f755de46490c03a81ea2a88dcfc71a6c309c0",
+      "path_only_patches": [
+        {
+          "old": "PROC, OUT = os.path.join(ROOT, 'proc'), os.path.join(ROOT, 'out')\n",
+          "new": "PROC = os.environ.get('LOGAD_PROC_DIR', os.path.join(ROOT, 'proc'))\nOUT = os.environ.get('LOGAD_OUT_DIR', os.path.join(ROOT, 'out'))\n"
+        }
+      ]
+    },
+    {
+      "archive_member": "dasc_log/out/log_results.csv",
+      "public_path": "legacy_baseline/results/log_results.csv",
+      "original_sha256": "7734111d30a153cfa8579ab8bd21188fb2db60cdff4c2125503f36125a258991",
+      "path_only_patches": []
+    }
+  ],
+  "published_tables_source_sha256": "dd719ded9cd68b182632c2ff934769355f78033dd229edac0f8e658b12dda3e9",
+  "data_archives": [
+    {
+      "filename": "HDFS_v1.zip",
+      "sha256": "04f919f2185821f23f045dca611a7586429bdabc601bd7b43f30005f8e289b01"
+    },
+    {
+      "filename": "BGL.zip",
+      "sha256": "d67fd82a711aea0157a9b83175892c6ee60e384a2ddf5bc51f39118453816da8"
+    }
+  ]
+}
